@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
+body{
+    font-family: 'Ubuntu', sans-serif;
+    
+}
+
+main{
+    min-height: 100vh;
+    display: grid;
+    grid-template-areas: "sidebar header" "sidebar article";
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 15em 4fr;
+    gap: 10px;
+}
+
+
+
+/* Laying out the header */
+header{
+    grid-area: header;
+    background: rgba(0, 0, 0, .4);
+    box-shadow: 2px 2px 2px #555;
+    display: grid;
+    grid-template-areas: "search secondProfile" "profile buttons";
+    grid-template-columns: 2fr 1fr;
+    padding: 2em;
+}
+
+.search-container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.search-container > input{
+    width: 25em;
+    padding: .5em;
+    border: none;
+    outline: none;
+}
+
+.search-container{
+    grid-area: search;
+    padding: .2em;
+}
+
+.profile-container{
+    grid-area: profile;
+    display: grid;
+    grid-template-areas: "logo greating" "logo name";
+    grid-template-columns: 1fr 5fr;
+}
+
+.profile-container > .logo{
+    grid-area: logo;
+
+}
+
+.profile-container > .greating{
+    grid-area: greating;
+}
+
+.profile-container > .name{
+    grid-area: name;
+}
+
+.second-pcontainer{
+    grid-area: secondProfile;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: .2em;
+}
+
+.buttons{
+    grid-area: buttons;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: .2em;
+}
+
+.buttons > button{
+    margin: auto 2em;
+}
+
+
+/* Laying out the side bar section */
+
+aside{
+    grid-area: sidebar;
+    background: rgba(0, 0, 0, .4);
+    padding: .5em;
+    box-shadow: 2px 2px 2px #555;
+}
+aside h1{
+    font-size: 2rem;
+    margin: 1em auto;
+}
+aside ul{
+    display: grid;
+    grid-template-rows: repeat(9, minmax(30px, 1fr));
+    align-items: center;
+}
+
+aside li{
+    transition: .5s;
+}
+
+aside ul li:hover{
+    border: 1px solid black;
+}
+
+/* Laying out the main article */
+
+article{
+    grid-area: article;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "projects announcements" "projects trendings";
+    gap: 10px;
+}
+
+.projects{
+    grid-area: projects;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 1em;
+    gap: 20px;
+}
+
+.projects > .box{
+    border-left: 3px solid black;
+    box-shadow: 3px 2px 3px #555;
+    padding: 1em;
+}
+
+.announcements{
+    grid-area: announcements;
+    border: 2px solid black;
+    box-shadow: 2px 2px 2px #555;
+}
+
+.trendings{
+    grid-area: trendings;
+    border: 2px solid black;
+    box-shadow: 2px 2px 2px #555;
+}
+
+aside > .title{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.icon{
+    width: 30px;
+    height: 30px;
+    margin: 0 5px;
+}
+
+aside > ul > li{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 5px 0;
+}
