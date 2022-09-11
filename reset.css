@@ -46,3 +46,10 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+a, a:hover, a:visited, a:focus, a:active  {
+	text-decoration: none;
+	color: inherit;
+	outline: 0;
+	cursor: pointer;
+  }

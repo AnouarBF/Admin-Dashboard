@@ -23,7 +23,7 @@ header{
     display: grid;
     grid-template-areas: "search secondProfile" "profile buttons";
     grid-template-columns: 2fr 1fr;
-    padding: 2em;
+    padding: 1.25em;
 }
 
 .search-container{
@@ -37,6 +37,7 @@ header{
     padding: .5em;
     border: none;
     outline: none;
+    border-radius: 50px;
 }
 
 .search-container{
@@ -47,41 +48,64 @@ header{
 .profile-container{
     grid-area: profile;
     display: grid;
-    grid-template-areas: "logo greating" "logo name";
+    grid-template-areas: "logo greating-name";
     grid-template-columns: 1fr 5fr;
+    align-items: center;
 }
 
 .profile-container > .logo{
     grid-area: logo;
-
 }
 
-.profile-container > .greating{
-    grid-area: greating;
-}
-
-.profile-container > .name{
-    grid-area: name;
+.profile-container > #greating-name{
+    grid-area: greating-name;
 }
 
 .second-pcontainer{
     grid-area: secondProfile;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    padding: .2em;
+    place-items: center;
+    width: 60%;
 }
 
 .buttons{
     grid-area: buttons;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    padding: .2em;
+    padding: 1em;
 }
+/* 
+a{
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+} */
+
+/* a.nostyle:link {
+    text-decoration: none;
+    color: black;
+    cursor: auto;
+}
+
+a.nostyle:visited {
+    text-decoration: inherit;
+    color: inherit;
+    cursor: auto;
+} */
 
 .buttons > button{
-    margin: auto 2em;
-}
+    cursor: pointer;
+    margin: auto 1em;
+    padding: 1em;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 1px 1px 1px rgba(0, 0, 0, .5);
+} 
 
+.buttons > button:hover{
+    background-color: white;
+}
 
 /* Laying out the side bar section */
 
@@ -99,14 +123,32 @@ aside ul{
     display: grid;
     grid-template-rows: repeat(9, minmax(30px, 1fr));
     align-items: center;
+    position: relative;
 }
 
-aside li{
+aside ul > li{
     transition: .5s;
+    width: 100%;
+    height: 100%;
+    padding-top: 1em;
+    padding-bottom: 1em; 
 }
 
-aside ul li:hover{
+aside ul .list-item{
+    cursor: pointer;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: .5em;
+    padding-bottom: .5em; 
+} 
+
+aside ul .list-item:hover{
     border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: .5px .5px .5px black;
 }
 
 /* Laying out the main article */
@@ -115,7 +157,7 @@ article{
     grid-area: article;
     padding: 10px;
     display: grid;
-    grid-template-columns: 4fr 1fr;
+    grid-template-columns: 5fr 1fr;
     grid-template-rows: 1fr 1fr;
     grid-template-areas: "projects announcements" "projects trendings";
     gap: 10px;
@@ -124,7 +166,7 @@ article{
 .projects{
     grid-area: projects;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     padding: 1em;
     gap: 20px;
 }
@@ -133,19 +175,37 @@ article{
     border-left: 3px solid black;
     box-shadow: 3px 2px 3px #555;
     padding: 1em;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.projects > .black-border{
+    border-left: 3px solid white;
+}
+
+.box > h1{
+    text-align: center;
+    margin: .5em;
 }
 
 .announcements{
     grid-area: announcements;
     border: 2px solid black;
     box-shadow: 2px 2px 2px #555;
+    padding: 1em;
 }
 
 .trendings{
     grid-area: trendings;
     border: 2px solid black;
     box-shadow: 2px 2px 2px #555;
+    padding: 1em;
 }
+
+.antr-blacked{
+    border: 2px solid white;
+}
+/* Laying out the aside section */
 
 aside > .title{
     display: flex;
@@ -164,4 +224,53 @@ aside > ul > li{
     justify-content: flex-start;
     align-items: center;
     margin: 5px 0;
+}
+
+#logo{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#profile-logo{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.btn-logo{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+} 
+
+#project-btns{
+    position:relative;
+}
+
+#container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+#text > h1{
+    margin: 1em; 
+    text-align: center;
+    font-weight: bolder;
+}
+
+#text > p{
+    line-height: 1.25em;
+}
+
+.blacked{
+    border-left: 5px solid white;
 }
